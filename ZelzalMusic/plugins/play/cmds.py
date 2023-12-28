@@ -58,7 +58,7 @@ async def zilzal(client: Client, message: Message):
 - 𝚄𝚂𝙴𝚁 :@{usrnam} 
 - 𝙸𝙳 :`{usr.id}`
  
-ٴ<b>•✯ سورس الزعيم ✯•</b> """, 
+ٴ<b>•────‌‌‏✯ ʑ_ᴍᴜsɪᴄ ✯──‌‌‏─‌‌‏─•</b> """, 
 reply_markup=InlineKeyboardMarkup(
           [               
             [            

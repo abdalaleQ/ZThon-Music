@@ -32,7 +32,7 @@ async def zzzback(_, query: CallbackQuery):
                         "• اوامــر المطــور •", callback_data="zzzdv"),
                 ],[
                     InlineKeyboardButton(
-                        "•✯ ᴢᴛʜᴏɴ_ᴍᴜsɪᴄ ✯•", url="https://t.me/Zelzal_Music"),
+                        "•✯ سورس الزعيم ✯•", url="https://t.me/rr_r_v"),
                 ],
             ]
         ),

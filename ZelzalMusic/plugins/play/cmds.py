@@ -14,7 +14,7 @@ from ZelzalMusic import app
 from config import OWNER_ID, LOGGER_ID
 
 
-@app.on_message(command(["ايلين", "بوت", "الاوامر"]))
+@app.on_message(command(["اوامر", "ميوزك", "الاوامر"]))
 async def zdatsr(client: Client, message: Message):
     usr = await client.get_users(OWNER_ID)
     name = usr.first_name

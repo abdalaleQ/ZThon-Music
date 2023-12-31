@@ -17,7 +17,7 @@ def start_panel(_):
             )
         ],
         [
-            InlineKeyboardButton(text=_["S_B_6"], url="https://t.me/ZThon_Music"),
+            InlineKeyboardButton(text=_["S_B_6"], url="https://t.me/rr_r_v"),
         ],
     ]
     return buttons
@@ -33,7 +33,14 @@ def private_panel(_):
         ],
         [InlineKeyboardButton(text=_["S_B_4"], callback_data="zzzback")],
         [
-            InlineKeyboardButton("- المطور .", url=f"https://t.me/{OWNER_USERNAME}")
+            InlineKeyboardButton(text=_["S_B_6"], url="https://t.me/rr_r_v"),
         ],
     ]
     return buttons
+    ],
+        [
+            InlineKeyboardButton(text=_["المطور"], url="https://t.me/rr_r_v"),
+        ],
+    ]
+    return buttons
+

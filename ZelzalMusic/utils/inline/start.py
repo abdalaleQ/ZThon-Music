@@ -38,11 +38,8 @@ def private_panel(_):
     ]
     return buttons
     ]
-           ]
         ),
     )
-
-
 
 @Client.on_message(command(["المطور", f"مطور"]) & filters.group & ~filters.edited)
 async def gcstart(client: Client, message: Message):
@@ -57,5 +54,3 @@ async def gcstart(client: Client, message: Message):
             ]
         ),
     )
-
-

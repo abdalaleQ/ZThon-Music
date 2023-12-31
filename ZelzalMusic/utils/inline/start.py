@@ -37,3 +37,25 @@ def private_panel(_):
         ],
     ]
     return buttons
+    ]
+           ]
+        ),
+    )
+
+
+
+@Client.on_message(command(["المطور", f"مطور"]) & filters.group & ~filters.edited)
+async def gcstart(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://te.legra.ph/file/5fdd8da2461c05d893189.jpg",
+        caption=f"- مطور البوت . \n\n - قناة المطور @{UPDATE}",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("- المطور .", url=f"https://t.me/{OWNER_USERNAME}")
+                ]
+            ]
+        ),
+    )
+
+

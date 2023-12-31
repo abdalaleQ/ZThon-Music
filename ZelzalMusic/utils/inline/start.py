@@ -1,62 +1,39 @@
-import asyncio
+#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ ʑᴇʟᴢᴀʟ_ᴍᴜsɪᴄ ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯  T.me/ZThon   ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ T.me/ZThon_Music ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 
-from pyrogram import Client, filters, __version__ as pyrover
-from pyrogram.errors import FloodWait, UserNotParticipant
-from pytgcalls import (__version__ as pytover)
+from pyrogram.types import InlineKeyboardButton
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ChatJoinRequest
-from m8n.utils.filters import command
-
-
-from m8n.config import BOT_USERNAME
-from m8n.config import START_PIC
-from m8n.config import BOT_NAME
-from m8n.config import UPDATE
-from m8n.config import OWNER_USERNAME
+import config
+from ZelzalMusic import app
 
 
-
-@Client.on_message(command("/start") & filters.private & ~filters.edited)
-async def start_(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"{START_PIC}",
-        caption=f""" ‹ مرحبا بك عزيزي في بوت **{BOT_NAME}**
-        
-- اضغط على زر ‹ الاوامر › لمعرفة الأوامر ›
-
-- اضغط على زر ‹ الاعدادات › لمعرفة الاعدادات ›""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "‹ الاعدادات ›", callback_data="cbabout"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "‹ الاوامر ›", callback_data="cbevery")
-                ],
-                [
-                    InlineKeyboardButton(
-                        "‹ اضفني الى مجموعتك ›", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
-                ]
-           ]
-        ),
-    )
+def start_panel(_):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["S_B_1"],
+                url=f"https://t.me/{app.username}?startgroup=true",
+            )
+        ],
+        [
+            InlineKeyboardButton(text=_["S_B_6"], url="https://t.me/ZThon_Music"),
+        ],
+    ]
+    return buttons
 
 
-
-@Client.on_message(command(["المطور", f"مطور"]) & filters.group & ~filters.edited)
-async def gcstart(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://te.legra.ph/file/5fdd8da2461c05d893189.jpg",
-        caption=f"- مطور البوت . \n\n - قناة المطور @{UPDATE}",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("- المطور .", url=f"https://t.me/{OWNER_USERNAME}")
-                ]
-            ]
-        ),
-    )
-
-
+def private_panel(_):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text=_["S_B_3"],
+                url=f"https://t.me/{app.username}?startgroup=true",
+            )
+        ],
+        [InlineKeyboardButton(text=_["S_B_4"], callback_data="zzzback")],
+        [
+            InlineKeyboardButton(text=_["S_B_6"], url="https://t.me/ZThon_Music"),
+        ],
+    ]
+    return buttons
